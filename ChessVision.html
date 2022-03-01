@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
+    <style>
+      .square {
+          background: #fff;
+          border: 1px solid #999;
+          
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 34px;
+          height: 34px;
+          margin-right: -1px;
+          margin-top: -1px;
+          padding: 0;
+          text-align: center;
+          width: 34px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        class Square extends React.Component {
+          render() {
+            return (
+              <button className="square">
+                {this.props.value}
+              </button>
+            );
+          }
+        }
+
+        class Board extends React.Component{
+            renderSquare(i){
+                return <Square value={i} />;
+            }
+
+            render(){
+
+              return(
+                <div>
+                    <div className="status">{status}</div>
+                    <div className="board-row">
+                        {this.renderSquare(1)}
+                        {this.renderSquare(2)}
+                        {this.renderSquare(3)}
+                        {this.renderSquare(4)}
+                        {this.renderSquare(5)}
+                        {this.renderSquare(6)}
+                        {this.renderSquare(7)}
+                        {this.renderSquare(8)}
+                        
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(9)}
+                        {this.renderSquare(10)}
+                        {this.renderSquare(11)}
+                        {this.renderSquare(12)}
+                        {this.renderSquare(13)}
+                        {this.renderSquare(14)}
+                        {this.renderSquare(15)}
+                        {this.renderSquare(16)}
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(17)}
+                        {this.renderSquare(18)}
+                        {this.renderSquare(19)}
+                        {this.renderSquare(20)}
+                        {this.renderSquare(21)}
+                        {this.renderSquare(22)}
+                        {this.renderSquare(23)}
+                        {this.renderSquare(24)}
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(25)}
+                        {this.renderSquare(26)}
+                        {this.renderSquare(27)}
+                        {this.renderSquare(28)}
+                        {this.renderSquare(29)}
+                        {this.renderSquare(30)}
+                        {this.renderSquare(31)}
+                        {this.renderSquare(32)}
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(33)}
+                        {this.renderSquare(34)}
+                        {this.renderSquare(35)}
+                        {this.renderSquare(36)}
+                        {this.renderSquare(37)}
+                        {this.renderSquare(38)}
+                        {this.renderSquare(39)}
+                        {this.renderSquare(40)}
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(41)}
+                        {this.renderSquare(42)}
+                        {this.renderSquare(43)}
+                        {this.renderSquare(44)}
+                        {this.renderSquare(45)}
+                        {this.renderSquare(46)}
+                        {this.renderSquare(47)}
+                        {this.renderSquare(48)}
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(49)}
+                        {this.renderSquare(50)}
+                        {this.renderSquare(51)}
+                        {this.renderSquare(52)}
+                        {this.renderSquare(53)}
+                        {this.renderSquare(54)}
+                        {this.renderSquare(55)}
+                        {this.renderSquare(56)}
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(57)}
+                        {this.renderSquare(58)}
+                        {this.renderSquare(59)}
+                        {this.renderSquare(60)}
+                        {this.renderSquare(61)}
+                        {this.renderSquare(62)}
+                        {this.renderSquare(63)}
+                        {this.renderSquare(64)}
+                    </div>
+                </div>
+              );
+                
+            }
+        }
+
+        ReactDOM.render(<Board />, document.getElementById('root'))
+    </script>
+
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this section for a production-ready setup with JSX:
+      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
+
+      In a larger project, you can use an integrated toolchain that includes JSX instead:
+      https://reactjs.org/docs/create-a-new-react-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      https://reactjs.org/docs/react-without-jsx.html
+    -->
+  </body>
+
+  
+</html>
