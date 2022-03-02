@@ -32,7 +32,7 @@
         class Square extends React.Component {
           render() {
             return (
-              <button className="square" onClick={props.onClick}>
+              <button className="square">
                 {this.props.value}
               </button>
             );
@@ -140,11 +140,7 @@
           constructor(props){
             super(props);
             this.state = {
-              currentSquare = ,
-              squares = ["A1","A2","A3","A4","A5","A6","A7","A8","A9","","","","","","","","","","","","","","","",],
-              time = //Falta el timer
-              userSquares = [],
-              times = []
+              
             };
           }
            handleClick(square){
