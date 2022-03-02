@@ -29,19 +29,23 @@
     <div id="root"></div>
     <script type="text/babel">
 
-        class Square extends React.Component {
-          render() {
+        function Square(props) {
             return (
-              <button className="square">
-                {this.props.value}
+              <button className="square" onClick={props.onClick}>
+                {props.value}
               </button>
             );
-          }
+          
         }
 
         class Board extends React.Component{
             renderSquare(i){
-                return <Square value={i} onClick={() => this.props.onClick(i)} />;
+                return (
+                  <Square 
+                    value={i} 
+                    onClick={() => this.props.onClick(i)} 
+                  />
+                );
             }
 
             render(){
@@ -50,85 +54,85 @@
                 <div>
                     <div className="status">{status}</div>
                     <div className="board-row">
-                        {this.renderSquare("8A")}
-                        {this.renderSquare("8B")}
-                        {this.renderSquare("8C")}
-                        {this.renderSquare("8D")}
-                        {this.renderSquare("8E")}
-                        {this.renderSquare("8F")}
-                        {this.renderSquare("8G")}
-                        {this.renderSquare("8H")}
+                        {this.renderSquare("A8")}
+                        {this.renderSquare("B8")}
+                        {this.renderSquare("C8")}
+                        {this.renderSquare("D8")}
+                        {this.renderSquare("E8")}
+                        {this.renderSquare("F8")}
+                        {this.renderSquare("G8")}
+                        {this.renderSquare("H8")}
                         
                     </div>
                     <div className="board-row">
-                        {this.renderSquare("7A")}
-                        {this.renderSquare("7B")}
-                        {this.renderSquare("7C")}
-                        {this.renderSquare("7D")}
-                        {this.renderSquare("7E")}
-                        {this.renderSquare("7F")}
-                        {this.renderSquare("7G")}
-                        {this.renderSquare("7H")}
+                        {this.renderSquare("A7")}
+                        {this.renderSquare("B7")}
+                        {this.renderSquare("C7")}
+                        {this.renderSquare("D7")}
+                        {this.renderSquare("E7")}
+                        {this.renderSquare("F7")}
+                        {this.renderSquare("G7")}
+                        {this.renderSquare("H7")}
                     </div>
                     <div className="board-row">
-                        {this.renderSquare("6A")}
-                        {this.renderSquare("6B")}
-                        {this.renderSquare("6C")}
-                        {this.renderSquare("6D")}
-                        {this.renderSquare("6E")}
-                        {this.renderSquare("6F")}
-                        {this.renderSquare("6G")}
-                        {this.renderSquare("6H")}
+                        {this.renderSquare("A6")}
+                        {this.renderSquare("B6")}
+                        {this.renderSquare("C6")}
+                        {this.renderSquare("D6")}
+                        {this.renderSquare("E6")}
+                        {this.renderSquare("F6")}
+                        {this.renderSquare("G6")}
+                        {this.renderSquare("H6")}
                     </div>
                     <div className="board-row">
-                        {this.renderSquare("5A")}
-                        {this.renderSquare("5B")}
-                        {this.renderSquare("5C")}
-                        {this.renderSquare("5D")}
-                        {this.renderSquare("5E")}
-                        {this.renderSquare("5F")}
-                        {this.renderSquare("5G")}
-                        {this.renderSquare("5H")}
+                        {this.renderSquare("A5")}
+                        {this.renderSquare("B5")}
+                        {this.renderSquare("C5")}
+                        {this.renderSquare("D5")}
+                        {this.renderSquare("E5")}
+                        {this.renderSquare("F5")}
+                        {this.renderSquare("G5")}
+                        {this.renderSquare("H5")}
                     </div>
                     <div className="board-row">
-                        {this.renderSquare("4A")}
-                        {this.renderSquare("4B")}
-                        {this.renderSquare("4C")}
-                        {this.renderSquare("4D")}
-                        {this.renderSquare("4E")}
-                        {this.renderSquare("4F")}
-                        {this.renderSquare("4G")}
-                        {this.renderSquare("4H")}
+                        {this.renderSquare("A4")}
+                        {this.renderSquare("B4")}
+                        {this.renderSquare("C4")}
+                        {this.renderSquare("D4")}
+                        {this.renderSquare("E4")}
+                        {this.renderSquare("F4")}
+                        {this.renderSquare("G4")}
+                        {this.renderSquare("H4")}
                     </div>
                     <div className="board-row">
-                        {this.renderSquare("3A")}
-                        {this.renderSquare("3B")}
-                        {this.renderSquare("3C")}
-                        {this.renderSquare("3D")}
-                        {this.renderSquare("3E")}
-                        {this.renderSquare("3F")}
-                        {this.renderSquare("3G")}
-                        {this.renderSquare("3H")}
+                        {this.renderSquare("A3")}
+                        {this.renderSquare("B3")}
+                        {this.renderSquare("C3")}
+                        {this.renderSquare("D3")}
+                        {this.renderSquare("E3")}
+                        {this.renderSquare("F3")}
+                        {this.renderSquare("G3")}
+                        {this.renderSquare("H3")}
                     </div>
                     <div className="board-row">
-                        {this.renderSquare("2A")}
-                        {this.renderSquare("2B")}
-                        {this.renderSquare("2C")}
-                        {this.renderSquare("2D")}
-                        {this.renderSquare("2E")}
-                        {this.renderSquare("2F")}
-                        {this.renderSquare("2G")}
-                        {this.renderSquare("2H")}
+                        {this.renderSquare("A2")}
+                        {this.renderSquare("B2")}
+                        {this.renderSquare("C2")}
+                        {this.renderSquare("D2")}
+                        {this.renderSquare("E2")}
+                        {this.renderSquare("F2")}
+                        {this.renderSquare("G2")}
+                        {this.renderSquare("H2")}
                     </div>
                     <div className="board-row">
-                        {this.renderSquare("1A")}
-                        {this.renderSquare("1B")}
-                        {this.renderSquare("1C")}
-                        {this.renderSquare("1D")}
-                        {this.renderSquare("1E")}
-                        {this.renderSquare("1F")}
-                        {this.renderSquare("1G")}
-                        {this.renderSquare("1H")}
+                        {this.renderSquare("A1")}
+                        {this.renderSquare("B1")}
+                        {this.renderSquare("C1")}
+                        {this.renderSquare("D1")}
+                        {this.renderSquare("E1")}
+                        {this.renderSquare("F1")}
+                        {this.renderSquare("G1")}
+                        {this.renderSquare("H1")}
                     </div>
                 </div>
               );
@@ -136,28 +140,49 @@
             }
         }
 
+
         class Game extends React.Component{
           constructor(props){
             super(props);
             this.state = {
               
+              squares : [
+                "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8",  
+                "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8",
+                "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8",
+                "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8",
+                "E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8",
+                "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8",
+                "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8",
+                "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8"],
+                current : Math.floor(Math.random() * 65)
             };
           }
-           handleClick(square){
 
+          
+
+           handleClick(square){
+            if(square == this.state.squares[this.state.current]){
+            
+              this.state.current = Math.floor(Math.random() * 65)
+              document.getElementById("currentLabel").innerHTML = this.state.squares[this.state.current]
+            }else{
+              alert("Wrong square")
+            }
            }
 
            render(){
              
             return(
               <div>
-                <Board />
+                <Board onClick={i => this.handleClick(i)}/>
+                <p id = "currentLabel">{this.state.squares[this.state.current]}</p>
               </div>
             );
            };
         }
 
-        ReactDOM.render(<Board />, document.getElementById('root'))
+        ReactDOM.render(<Game />, document.getElementById('root'))
     </script>
 
     <!--
