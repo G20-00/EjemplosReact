@@ -171,6 +171,7 @@
             
               this.state.current = Math.floor(Math.random() * 65)
               document.getElementById("currentLabel").innerHTML = this.state.squares[this.state.current]
+              document.getElementById("list").innerHTML = listToText(this.state.records)
             }else{
               alert("Wrong square")
               let newRecord = {
@@ -188,18 +189,25 @@
               <div>
                 <Board onClick={i => this.handleClick(i)}/>
                 <p id = "currentLabel">{this.state.squares[this.state.current]}</p>
-                <ScoreList items = {this.state.records} />
+                <p id="list"></p>
               </div>
             );
            };
         }
 
+        function listToText(list){
+          let text = ""
+          for(let i = 0; i<list.length;i++){
+              text += list[i].square + " " + list[i].time + " || "
+          }
+          return text
+        }
+    
+
         class ScoreList extends React.Component{
           render() {
             return (
-              <ul>
-                {this.props.items.map(item => (<li key={item.square}>{item.time}</li>))}
-              </ul>
+             <li>{props.items}</li>
             );
           }
         }
