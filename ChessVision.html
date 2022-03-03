@@ -156,7 +156,8 @@
                 "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8",
                 "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8"],
                 current : Math.floor(Math.random() * 65),
-                records : []
+                records : [],
+                lastTime : Date.now()
             };
           }
 
@@ -164,20 +165,27 @@
 
            handleClick(square){
             if(square == this.state.squares[this.state.current]){
+              let timeNow = Date.now()
+              let timeTook = timeNow - this.state.lastTime
               let newRecord = {
-                square : this.state.squares[this.state.current], time : 0
+                square : this.state.squares[this.state.current], time : timeTook, valid : "✓"
               }
               this.state.records= this.state.records.concat(newRecord)
-            
+              this.state.lastTime = timeNow
               this.state.current = Math.floor(Math.random() * 65)
               document.getElementById("currentLabel").innerHTML = this.state.squares[this.state.current]
               document.getElementById("list").innerHTML = listToText(this.state.records)
             }else{
-              alert("Wrong square")
+              let timeNow = Date.now()
+              let timeTook = timeNow - this.state.lastTime
               let newRecord = {
-                square : this.state.squares[this.state.current], time : 0
+                square : this.state.squares[this.state.current], time : timeTook, valid : "X"
               }
-              this.state.records=this.state.records.concat(newRecord)
+              this.state.records= this.state.records.concat(newRecord)
+              this.state.lastTime = timeNow
+              this.state.current = Math.floor(Math.random() * 65)
+              document.getElementById("currentLabel").innerHTML = this.state.squares[this.state.current]
+              document.getElementById("list").innerHTML = listToText(this.state.records)
             }
 
             console.log(this.state.records)
@@ -197,8 +205,8 @@
 
         function listToText(list){
           let text = ""
-          for(let i = 0; i<list.length;i++){
-              text += list[i].square + " " + list[i].time + " || "
+          for(let i = list.length-1; i>=0;i--){
+              text += list[i].valid + " " + list[i].square + " " + list[i].time + " Miliseconds || " + "\n"
           }
           return text
         }
